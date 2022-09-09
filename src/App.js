@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Tree from './bst';
+import helper from './helper';
 
 function App() {
+  const [arr, setArr] = useState('')
+
+  function handleArray(e) {
+    const convert = helper.convertInput(e.target.value);
+    setArr(convert);
+    console.log(Tree(arr).root);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='input-container'>
+        <label htmlFor='array'>
+          Please enter numbers followed by spaces
+        </label>
+        <input type='text' id='array' onChange={handleArray}/>
+        <div>{arr}</div>
+      </div>
     </div>
   );
 }
