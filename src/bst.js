@@ -19,12 +19,16 @@ function buildTree(arr, start = 0, end = arr.length - 1) {
   return root;
 }
 
-function Tree(arr) {
+// Array/Object flexibility allows Tree() to work with my React components
+function Tree(arrObj /* Can be array or object */) {  
   // Remove duplicates and sort array
-  const uniqueArr = [...new Set(arr.sort((a, b) => a - b))];
+  let uniqueArr;
+  if (Array.isArray(arrObj)) {
+    uniqueArr = [...new Set(arrObj.sort((a, b) => a - b))];
+  } 
 
   return {
-    root: buildTree(uniqueArr),
+    root: (Array.isArray(arrObj)) ? buildTree(uniqueArr) : arrObj,
 
     insert(value, root = this.root) {
       if (root === null) {
@@ -182,7 +186,8 @@ function Tree(arr) {
 
     depth(node, root = this.root, depth = 0) {
       if (root === null) return;
-      if (node === root) return depth;
+      // if (node === root) return depth;
+      if (node === root) return `Depth: ${depth}`
       if (node.data < root.data) {
         return this.depth(node, root.left, depth += 1);
       } else {
@@ -194,7 +199,7 @@ function Tree(arr) {
       const lHeight = this.height(root.left);
       const rHeight = this.height(root.right);
       const diff = Math.abs(lHeight - rHeight);
-      return diff < 2 ? true : false;
+      return diff < 2 ? 'true' : 'false';
     },
 
     rebalance(root = this.root) {
@@ -205,35 +210,38 @@ function Tree(arr) {
   }
 }
 
-const prettyPrint = (node, prefix = '', isLeft = true) => {
-  if (node.right !== null) {
-    prettyPrint(node.right, `${prefix}${isLeft ? '│   ' : '    '}`, false);
-  }
-  console.log(`${prefix}${isLeft ? '└── ' : '┌── '}${node.data}`);
-  if (node.left !== null) {
-    prettyPrint(node.left, `${prefix}${isLeft ? '    ' : '│   '}`, true);
-  }
-}
+// const prettyPrint = (node, prefix = '', isLeft = true) => {
+//   if (node.right !== null) {
+//     prettyPrint(node.right, `${prefix}${isLeft ? '│   ' : '    '}`, false);
+//   }
+//   console.log(`${prefix}${isLeft ? '└── ' : '┌── '}${node.data}`);
+//   if (node.left !== null) {
+//     prettyPrint(node.left, `${prefix}${isLeft ? '    ' : '│   '}`, true);
+//   }
+// }
 
-let arr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
-const tree = Tree(arr);
-prettyPrint(tree.root);
-console.log('find: ', tree.find(1))
-console.log('insert: ', tree.insert(999));
-console.log('insert: ', tree.insert(998));
-console.log('insert: ', tree.insert(997));
-prettyPrint(tree.root);
-console.log('delete: ', tree.delete(8));
-prettyPrint(tree.root);
-console.log('isBalanced: ', tree.isBalanced());
-console.log('rebalance: ', tree.rebalance());
-prettyPrint(tree.root);
+// let arr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
+// const tree = Tree(arr);
+// prettyPrint(tree.root);
+// console.log('find: ', tree.find(1))
+// console.log('insert: ', tree.insert(999));
+
+// prettyPrint(tree.root);
+// console.log('delete: ', tree.delete(8));
+// prettyPrint(tree.root);
+
+// prettyPrint(tree.root);
 // console.log('depth: ', tree.depth(tree.find(999)));
 // console.log('height: ', tree.height());
 // console.log('breadth: ', tree.levelOrder());
 // console.log('preorder: ', tree.preorder());
 // console.log('inorder: ', tree.inorder());
 // console.log('postorder: ', tree.postorder());
+
+// console.log('insert: ', tree.insert(998));
+// console.log('insert: ', tree.insert(997));
+// console.log('isBalanced: ', tree.isBalanced());
+// console.log('rebalance: ', tree.rebalance());
 
 // let testArr = [3,5,9];
 // const testTree = Tree(testArr);
@@ -243,3 +251,5 @@ prettyPrint(tree.root);
 // console.log('inorder: ', testTree.inorder());
 // console.log('preorder: ', testTree.preorder())
 // console.log('postorer: ', testTree.postorder());
+
+export default Tree;
