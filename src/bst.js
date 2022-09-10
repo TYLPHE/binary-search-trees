@@ -19,12 +19,16 @@ function buildTree(arr, start = 0, end = arr.length - 1) {
   return root;
 }
 
-function Tree(arr) {
+// Array/Object flexibility allows Tree() to work with my React components
+function Tree(arrObj /* Can be array or object */) {  
   // Remove duplicates and sort array
-  const uniqueArr = [...new Set(arr.sort((a, b) => a - b))];
+  let uniqueArr;
+  if (Array.isArray(arrObj)) {
+    uniqueArr = [...new Set(arrObj.sort((a, b) => a - b))];
+  } 
 
   return {
-    root: buildTree(uniqueArr),
+    root: (Array.isArray(arrObj)) ? buildTree(uniqueArr) : arrObj,
 
     insert(value, root = this.root) {
       if (root === null) {
@@ -182,7 +186,8 @@ function Tree(arr) {
 
     depth(node, root = this.root, depth = 0) {
       if (root === null) return;
-      if (node === root) return depth;
+      // if (node === root) return depth;
+      if (node === root) return `Depth: ${depth}`
       if (node.data < root.data) {
         return this.depth(node, root.left, depth += 1);
       } else {
@@ -194,7 +199,7 @@ function Tree(arr) {
       const lHeight = this.height(root.left);
       const rHeight = this.height(root.right);
       const diff = Math.abs(lHeight - rHeight);
-      return diff < 2 ? true : false;
+      return diff < 2 ? 'true' : 'false';
     },
 
     rebalance(root = this.root) {

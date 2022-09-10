@@ -1,3 +1,4 @@
+* {font-family: 'Courier New', Courier, monospace;}
 header {
   font-weight: bold;
   display: flex;
@@ -11,10 +12,8 @@ h1 {
 body {
   background-color: rgb(17, 32, 32);
   color: white;
-  font-family: 'Courier New', Courier, monospace;
 }
 pre, .print {
-  background-color: rgba(0, 0, 0, 0.349);
   padding: 1rem;
   margin: 0;
   border-radius: 10px;
@@ -22,6 +21,7 @@ pre, .print {
 }
 input {
   padding: .2rem;
+  flex: 1;
 }
 a {
   color: white;
@@ -29,20 +29,37 @@ a {
 a:visited {
   color: rgb(184, 184, 184)
 }
+button {
+  font-size: 1rem;
+}
 .App {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
 }
 .input-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.349);
 }
-.input-section {
+.field {
   display: flex;
   flex-direction: column;
 }
 .print-container {
   border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.349);
+}
+.input-button {
+  display: flex;
+  gap: 1rem;
+}
+.found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stats {
+  white-space: nowrap;
 }
