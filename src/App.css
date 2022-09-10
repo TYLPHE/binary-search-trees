@@ -1,17 +1,48 @@
 header {
   font-weight: bold;
-  font-size: 2rem;
-  padding: .5rem 0;
+  display: flex;
+  justify-content: space-between;
 }
-
+h1 {
+  background-color: rgba(0, 0, 0, 0.349);
+  border-radius: 10px;
+  text-align: center;
+}
 body {
   background-color: rgb(17, 32, 32);
   color: white;
   font-family: 'Courier New', Courier, monospace;
 }
-
-.input-container {
-  width: 400px;
+pre, .print {
+  background-color: rgba(0, 0, 0, 0.349);
+  padding: 1rem;
+  margin: 0;
+  border-radius: 10px;
+  white-space: pre-wrap;
+}
+input {
+  padding: .2rem;
+}
+a {
+  color: white;
+}
+a:visited {
+  color: rgb(184, 184, 184)
+}
+.App {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.input-section {
+  display: flex;
+  flex-direction: column;
+}
+.print-container {
+  border: 1px solid white;
 }

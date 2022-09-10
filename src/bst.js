@@ -220,13 +220,11 @@ function Tree(arr) {
 // prettyPrint(tree.root);
 // console.log('find: ', tree.find(1))
 // console.log('insert: ', tree.insert(999));
-// console.log('insert: ', tree.insert(998));
-// console.log('insert: ', tree.insert(997));
+
 // prettyPrint(tree.root);
 // console.log('delete: ', tree.delete(8));
 // prettyPrint(tree.root);
-// console.log('isBalanced: ', tree.isBalanced());
-// console.log('rebalance: ', tree.rebalance());
+
 // prettyPrint(tree.root);
 // console.log('depth: ', tree.depth(tree.find(999)));
 // console.log('height: ', tree.height());
@@ -234,6 +232,11 @@ function Tree(arr) {
 // console.log('preorder: ', tree.preorder());
 // console.log('inorder: ', tree.inorder());
 // console.log('postorder: ', tree.postorder());
+
+// console.log('insert: ', tree.insert(998));
+// console.log('insert: ', tree.insert(997));
+// console.log('isBalanced: ', tree.isBalanced());
+// console.log('rebalance: ', tree.rebalance());
 
 // let testArr = [3,5,9];
 // const testTree = Tree(testArr);

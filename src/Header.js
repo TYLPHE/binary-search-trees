@@ -1,9 +1,12 @@
-function Header() {
+function heaer() {
   return (
     <header>
-      Binary Search Trees
+      <div>Binary Search Tree by TYLPHE</div>
+      <a href="https://github.com/tylphe/binary-search-trees">
+        Visit GitHub Repository
+      </a>
     </header>
   )
 }
 
-export default Header;
+export default heaer;
