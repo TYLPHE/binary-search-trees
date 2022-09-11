@@ -115,7 +115,6 @@ const App = () => {
           <div className='field'>Pre Order: &nbsp;&nbsp;{preOrder}</div>
           <div className='field'>In Order: &nbsp;&nbsp;&nbsp;{inOrder}</div>
           <div className='field'>Post Order: &nbsp;{postOrder}</div>
-          <div className='field'>Post Order: &nbsp;{postOrder}</div>
         </fieldset>
       </div>
 
