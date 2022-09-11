@@ -2,8 +2,8 @@
 Building a balanced binary search tree (BST)
 ![A screenshot of the Binary Search Trees assignment](https://github.com/TYLPHE/binary-search-trees/blob/main/readme-assets/bst.jpeg)
 ## Links
-- [Link to assignment](https://www.theodinproject.com/lessons/javascript-binary-search-trees)
 - [Try Binary Search Trees here](https://TYLPHE.github.io/binary-search-trees/)
+- [Link to assignment](https://www.theodinproject.com/lessons/javascript-binary-search-trees)
 
 ## Summary
 All of my binary search tree functions can be found in my `bst.js` file. This project contains 2 factory functions, `Node` and `Tree`:
