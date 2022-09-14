@@ -32,8 +32,10 @@ const App = () => {
   }, [root])
   
   const handleArray = (e) =>  {
+    // console.log(e.target.value)
     const convert = helper.convertInput(e.target.value);
-    setArr(convert);
+    if (convert.length === 0) return;
+    else return setArr(convert);
   }
 
   const changeInsert = (e) => setInsert(e.target.value);
@@ -55,9 +57,7 @@ const App = () => {
     setDepth('')
   }
   const handleFind = () => {
-    console.log('root:', root, 'find:', find)
     const node = Tree(root).find(parseInt(find));
-    console.log(node);
     setDepth(Tree(root).depth(node));
     setFind('')
   }
