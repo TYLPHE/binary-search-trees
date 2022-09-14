@@ -19,7 +19,7 @@ const App = () => {
   const [isBalanced, setIsBalanced] = useState(false);
 
   useEffect(() => {
-    setRoot(Tree(arr).root);
+    setRoot({...Tree(arr).root});
   }, [arr])
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const App = () => {
   const changeInsert = (e) => setInsert(e.target.value);
   const handleInsert = () => {
     if (insert.length > 0) {
-      setRoot({...Tree(root).insert(insert)});
+      setRoot({...Tree(root).insert(parseInt(insert))});
     }
     setInsert('');
   }
@@ -55,7 +55,10 @@ const App = () => {
     setDepth('')
   }
   const handleFind = () => {
-    setDepth(Tree(root).depth(Tree(root).find(parseInt(find))));
+    console.log('root:', root, 'find:', find)
+    const node = Tree(root).find(parseInt(find));
+    console.log(node);
+    setDepth(Tree(root).depth(node));
     setFind('')
   }
 

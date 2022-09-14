@@ -185,7 +185,8 @@ function Tree(arrObj /* Can be array or object */) {
     },
 
     depth(node, root = this.root, depth = 0) {
-      if (root === null) return;
+      console.log('node:', node, 'root:', root)
+      if (root === null) return 'null';
       // if (node === root) return depth;
       if (node === root) return `Depth: ${depth}`
       if (node.data < root.data) {
