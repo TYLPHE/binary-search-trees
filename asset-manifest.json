@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/binary-search-trees/static/css/main.743bec66.css",
-    "main.js": "/binary-search-trees/static/js/main.369f8200.js",
+    "main.js": "/binary-search-trees/static/js/main.d98ca187.js",
     "index.html": "/binary-search-trees/index.html",
     "main.743bec66.css.map": "/binary-search-trees/static/css/main.743bec66.css.map",
-    "main.369f8200.js.map": "/binary-search-trees/static/js/main.369f8200.js.map"
+    "main.d98ca187.js.map": "/binary-search-trees/static/js/main.d98ca187.js.map"
   },
   "entrypoints": [
     "static/css/main.743bec66.css",
-    "static/js/main.369f8200.js"
+    "static/js/main.d98ca187.js"
   ]
 }
